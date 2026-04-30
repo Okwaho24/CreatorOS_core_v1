@@ -1,0 +1,14 @@
+{
+  "system": "CreatorOS",
+  "version": "1.0.0-Alpha",
+  "architect": "Archer Chain Analytics",
+  "pillars": [
+    "Radical Economics",
+    "Sovereign Growth",
+    "Refined Neubrutalism"
+  ],
+  "engine_hooks": {
+    "forensics": "AcerbE",
+    "vending": "RaPaX"
+  }
+}
