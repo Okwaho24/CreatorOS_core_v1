@@ -1,0 +1,30 @@
+[span_7](start_span)// CreatorOS Core Database Entities[span_7](end_span)
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  wallet    String?  @unique
+  products  Product[]
+  purchases Purchase[]
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  price       Float
+  creator     User     @relation(fields: [creatorId], references: [id])
+  creatorId   String
+  purchases   Purchase[]
+}
+
+model Purchase {
+  id          String   @id @default(uuid())
+  product     Product  @relation(fields: [productId], references: [id])
+  productId   String
+  buyer       User     @relation(fields: [buyerId], references: [id])
+  buyerId     String
+  status      String   // pending, confirmed, delivered
+  txHash      String?
+}
+
+[span_8](start_span)// Additional entities for Subscriptions and Communities as per Spec[span_8](end_span)
